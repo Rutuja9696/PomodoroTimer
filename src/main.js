@@ -1,31 +1,71 @@
-var minutes = 25;
-var seconds = 00;
+//value limit set for timer
+let seconds = 60;
+let minutes = 24;
+let hours = 0;
 
+let showSeconds = 0;
+let showMinutes = 0;
+let showHours = 0;
+
+let interval = null;
+//initial status
+let status = "stopped";
+//decrementing the set value
+//decrement sec
 function timer() {
-  document.getElementById("minutes").innerHTML = minutes;
-  document.getElementById("seconds").innerHTML = seconds;
-}
-function start() {
-  minutes = 24;
-  seconds = 59;
-  document.getElementById("minutes").innerHTML = minutes;
-  document.getElementById("seconds").innerHTML = seconds;
-  var minInt = setInterval(minutesTimer, 60000);
-  var secInt = setInterval(secondsTimer, 1000);
-  function minutesTimer() {
-    minutes = minutes - 1;
-    document.getElementById("minutes").innerHTML = minutes;
-  }
-  function secondsTimer() {
-    seconds = seconds - 1;
-    document.getElementById("seconds").innerHTML = seconds;
-    // prevents from negative value of sec
-    if (seconds <= 0) {
-      if (minutes <= 0) {
-        clearInterval(minInt);
-        clearInterval(secInt);
+  seconds--;
+  //decrement min
+  if (seconds < 0) {
+    seconds = 59;
+    minutes--;
+    //decrement hr
+    if (minutes < 0) {
+      minutes = 59;
+      hours--;
+      // display msg on time out
+      if (hours < 0) {
+        hours = 0;
+        minutes = 0;
+        seconds = 0;
+        document.getElementById("show").innerHTML = "00:00:00 Timer Expired";
       }
-      seconds = 60;
     }
   }
+  //add a 0 tens place when time is single digit
+  if (seconds < 10) {
+    showSeconds = "0" + seconds.toString();
+  } else {
+    showSeconds = seconds;
+  }
+  if (minutes < 10) {
+    showMinutes = "0" + minutes.toString();
+  } else {
+    showMinutes = minutes;
+  }
+  if (hours < 10) {
+    showHours = "0" + hours.toString();
+  } else {
+    showHours = hours;
+  }
+  //concatenated output
+  document.getElementById("show").innerHTML =
+    showHours + ":" + showMinutes + ":" + showSeconds;
+}
+//click to start timer
+function start() {
+  if (status === "stopped") interval = window.setInterval(timer, 1000);
+  document.getElementById("start");
+}
+//pause to pause timer
+function pause() {
+  window.clearInterval(interval);
+  document.getElementById("pause");
+}
+// resetting timer
+function reset() {
+  window.clearInterval(interval);
+  seconds = 00;
+  minutes = 24;
+  hours = 0;
+  document.getElementById("show").innerHTML = "00:24:00";
 }

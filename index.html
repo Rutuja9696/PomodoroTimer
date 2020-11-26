@@ -3,25 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pomodora Timer</title>
-    <script src="./src/main.js"></script>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <title>Simple Timer Function</title>
   </head>
-  <body onload="timer()">
-    <!-- //timer display -->
-    <div class="row">
-      <div class="min">
-        <h4 id="minutes"></h4>
-      </div>
-      <div class="seperation">
-        <h4>:</h4>
-      </div>
-      <div class="sec">
-        <h4 id="seconds"></h4>
+  <body>
+    <div class="timerContainer">
+      <div class="container">
+        <h1>Simple Timer Function</h1>
+        <br />
+        <div id="show">00:25:00</div>
+        <br />
+        <div class="buttons">
+          <div><button id="start" onclick="start()">Start</button></div>
+          <div><button id="pause" onclick="pause()">Pause</button></div>
+          <div><button id="reset" onclick="reset()">Reset</button></div>
+        </div>
       </div>
     </div>
-    <!-- dispay message -->
-    <div id="msg1"></div>
-    <button onclick="start()">Start</button>
-    <button>Pause</button>
   </body>
+  <script src="./src/main.js"></script>
 </html>
