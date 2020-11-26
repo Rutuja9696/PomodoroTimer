@@ -4,6 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pomodora Timer</title>
+    <script src="./src/main.js"></script>
   </head>
-  <body></body>
+  <body onload="timer()">
+    <!-- //timer display -->
+    <div class="row">
+      <div class="min">
+        <h4 id="minutes"></h4>
+      </div>
+      <div class="seperation">
+        <h4>:</h4>
+      </div>
+      <div class="sec">
+        <h4 id="seconds"></h4>
+      </div>
+    </div>
+    <button onclick="start()">Start</button>
+    <button>Pause</button>
+  </body>
 </html>
