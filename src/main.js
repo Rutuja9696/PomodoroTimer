@@ -19,5 +19,13 @@ function start() {
   function secondsTimer() {
     seconds = seconds - 1;
     document.getElementById("seconds").innerHTML = seconds;
+    // prevents from negative value of sec
+    if (seconds <= 0) {
+      if (minutes <= 0) {
+        clearInterval(minInt);
+        clearInterval(secInt);
+      }
+      seconds = 60;
+    }
   }
 }
