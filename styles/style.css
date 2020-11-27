@@ -1,0 +1,16 @@
+.container {
+  text-align: center;
+  color: purple;
+}
+#show {
+  font-size: 60px;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+button {
+  margin: 8px;
+  border: 2px solid purple;
+  padding: 10px;
+}

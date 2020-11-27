@@ -65,7 +65,7 @@ function pause() {
 function reset() {
   window.clearInterval(interval);
   seconds = 00;
-  minutes = 24;
+  minutes = 25;
   hours = 0;
-  document.getElementById("show").innerHTML = "00:24:00";
+  document.getElementById("show").innerHTML = "00:25:00";
 }
