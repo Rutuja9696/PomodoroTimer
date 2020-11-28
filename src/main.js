@@ -73,8 +73,8 @@ function reset() {
 document.getElementById("start").innerHTML = "Start";
 status = "stopped";
 document.getElementById("start").disabled = false;
-document.getElementById("short").disabled = false;
-document.getElementById("long").disabled = false;
+document.getElementById("shortBreak").disabled = false;
+document.getElementById("longBreak").disabled = false;
 // function for short break of 1 to 5 mins
 function shortBreak() {
   flag = 1;
@@ -116,7 +116,7 @@ function shortBreak() {
 function longBreak() {
   flag = 1;
   window.clearInterval(interval);
-  var Time = prompt("Long break cane be between 10-15 minutes");
+  var Time = prompt("Long break can be between 10-15 minutes");
   if (Time != null) {
     if (Time === "") {
       Time = 15;
