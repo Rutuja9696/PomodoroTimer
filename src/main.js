@@ -75,11 +75,12 @@ status = "stopped";
 document.getElementById("start").disabled = false;
 document.getElementById("short").disabled = false;
 document.getElementById("long").disabled = false;
-//short break of 1 to 5 mins
+// function for short break of 1 to 5 mins
 function shortBreak() {
   flag = 1;
   window.clearInterval(interval);
-  var Time = prompt("By Default short break is between 1-5 minutes");
+  // promt message to enter input from user
+  var Time = prompt("Short break will be between 1-5 minutes");
   if (Time != null) {
     if (Time === "") {
       Time = 5;
@@ -95,6 +96,43 @@ function shortBreak() {
         Time = parseInt(Time);
         if (Number.isInteger(Time)) {
           document.getElementById("show").innerHTML = "00:0" + Time + ":00";
+        } else {
+          alert("Please enter a valid number");
+          flag = 0;
+        }
+      }
+    }
+  } else {
+    Time = 0;
+    flag = 0;
+    document.getElementById("show").innerHTML = "00:25:00";
+    //alert("your break is for 5 min");
+  }
+  minutes = Time;
+  status = "stopped";
+  seconds = "0";
+  start();
+}
+//function for long break
+function longBreak() {
+  flag = 1;
+  window.clearInterval(interval);
+  var Time = prompt("Long break cane be between 10-15 minutes");
+  if (Time != null) {
+    if (Time === "") {
+      Time = 15;
+      document.getElementById("show").innerHTML = "00:" + Time + ":00";
+    } else {
+      if (Time < 10) {
+        Time = 10;
+        document.getElementById("show").innerHTML = "00:" + Time + ":00";
+      } else if (Time > 15) {
+        Time = 15;
+        document.getElementById("show").innerHTML = "00:" + Time + ":00";
+      } else {
+        Time = parseInt(Time);
+        if (Number.isInteger(Time)) {
+          document.getElementById("show").innerHTML = "00:" + Time + ":00";
         } else {
           alert("Please enter a valid number");
           flag = 0;
