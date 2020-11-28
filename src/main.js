@@ -69,3 +69,46 @@ function reset() {
   hours = 0;
   document.getElementById("show").innerHTML = "00:25:00";
 }
+//end of simple timer of 25 mins
+document.getElementById("start").innerHTML = "Start";
+status = "stopped";
+document.getElementById("start").disabled = false;
+document.getElementById("short").disabled = false;
+document.getElementById("long").disabled = false;
+//short break of 1 to 5 mins
+function shortBreak() {
+  flag = 1;
+  window.clearInterval(interval);
+  var Time = prompt("By Default short break is between 1-5 minutes");
+  if (Time != null) {
+    if (Time === "") {
+      Time = 5;
+      document.getElementById("show").innerHTML = "00:" + Time + ":00";
+    } else {
+      if (Time < 1) {
+        Time = 1;
+        document.getElementById("show").innerHTML = "00:0" + Time + ":00";
+      } else if (Time > 5) {
+        Time = 5;
+        document.getElementById("show").innerHTML = "00:0" + Time + ":00";
+      } else {
+        Time = parseInt(Time);
+        if (Number.isInteger(Time)) {
+          document.getElementById("show").innerHTML = "00:0" + Time + ":00";
+        } else {
+          alert("Please enter a valid number");
+          flag = 0;
+        }
+      }
+    }
+  } else {
+    Time = 0;
+    flag = 0;
+    document.getElementById("show").innerHTML = "00:25:00";
+    //alert("your break is for 5 min");
+  }
+  minutes = Time;
+  status = "stopped";
+  seconds = "0";
+  start();
+}
