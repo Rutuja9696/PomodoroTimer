@@ -34,5 +34,6 @@ e.font size
 f.padding
 
 7.Challenges faced:
--preventing time from displaying negative values.
--adding 0 in tens place when the value was single digit.
+-Preventing time from displaying negative values.(status:solved)
+-Adding 0 in tens place when the value was single digit.(status:solved)
+-To continue the time after completion of breaks.(status:Pending)
