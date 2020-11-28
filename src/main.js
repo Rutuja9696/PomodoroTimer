@@ -106,7 +106,6 @@ function shortBreak() {
     Time = 0;
     flag = 0;
     document.getElementById("show").innerHTML = "00:25:00";
-    //alert("your break is for 5 min");
   }
   minutes = Time;
   status = "stopped";
@@ -143,7 +142,6 @@ function longBreak() {
     Time = 0;
     flag = 0;
     document.getElementById("show").innerHTML = "00:25:00";
-    //alert("your break is for 5 min");
   }
   minutes = Time;
   status = "stopped";
