@@ -10,9 +10,9 @@ This is a pomodoro timer that starts from the set time and decrements upto 0. It
 This is the demo link to view the program output:-
 https://rutuja9696.github.io/PomodoroTimer/
 
-4.Technologies Used:
--HTML
--css
+4.Technologies Used:\
+-HTML\
+-css\
 -javascrpit
 
 6.Technical Description :
