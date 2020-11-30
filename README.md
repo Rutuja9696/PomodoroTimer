@@ -15,7 +15,7 @@ https://rutuja9696.github.io/PomodoroTimer/
 -css\
 -javascrpit
 
-6.Technical Description :\
+5.Technical Description :\
 Following tags and stylings were used to built this program:\
 -Markup\
 a.html\
@@ -33,6 +33,6 @@ d.boder\
 e.font size\
 f.padding
 
-7.Challenges faced:\
+6.Challenges faced:\
 -Preventing time from displaying negative values.(status:solved)\
 -Adding 0 in tens place when the value was single digit.(status:solved)\
